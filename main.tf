@@ -11,7 +11,7 @@ locals {
 }
 
 resource "aws_resourcegroups_group" "resourcegroups_group" {
-    name = "${locals.namespace}-group"
+    name = "${local.namespace}-group"
     resource_query {
         query = <<-JSON
         {
