@@ -6,7 +6,8 @@ locals {
 
 resource "aws_iam_role" "iam_role" {
     name = "${local.namespace}-tf-assume-role"
-    assume_role_policy = <<-EOF{
+    assume_role_policy = <<-EOF
+    {
         "Version": "2012-10-17",
         "Statement": [{
             "Action": "sts:AssumeRole",
@@ -15,7 +16,8 @@ resource "aws_iam_role" "iam_role" {
             },
             "Effect": "Allow"
         }]
-    }EOF
+    }
+    EOF
     
     tags = {
         ResourceGroup = local.namespace
