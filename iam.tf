@@ -9,13 +9,15 @@ resource "aws_iam_role" "iam_role" {
     assume_role_policy = <<-EOF
     {
         "Version": "2012-10-17",
-        "Statement": [{
-            "Action": "sts:AssumeRole",
-            "Principal": {
-                "AWS": "${local.principal_arn}"
-            },
-            "Effect": "Allow"
-        }]
+        "Statement": [
+            {
+                "Action": "sts:AssumeRole",
+                "Principal": {
+                    "AWS": "${local.principal_arn}"
+                },
+                "Effect": "Allow"
+            }
+        ]
     }
     EOF
     
